@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.safestring import mark_safe
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -13,7 +13,7 @@ class Brand(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, default='')
     is_active = models.BooleanField()
 
     class Meta:
@@ -42,8 +42,8 @@ class Product(models.Model):
         return self.name
 
 
-# class CartItem(models.Model):
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-#     quantity = models.IntegerField()
-#     entered_on = models.DateTimeField()
+class CartItem(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.IntegerField()
+    entered_on = models.DateTimeField()
