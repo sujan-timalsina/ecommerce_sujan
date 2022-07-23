@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -9,46 +10,58 @@
 
 	<title>{% block title %} Electronics Commerce {% endblock %}</title>
 	<style type="text/css">
-		.min-h-100 { min-height: 100%; }
+		.min-h-100 {
+			min-height: 100%;
+		}
 	</style>
 </head>
+
 <body>
-	<div class="row">
-	<div id="header" class="bg-info col-sm-12 col-md-12 col-lg-12">
-		<div class="row">
-			<div class="col-sm-4 col-md-4 col-lg-4">
-				{% comment %} <img src="logo.png" > {% endcomment %}
-				<img alt="Shoeaholic logo" style="height:50px; width:auto;" />
+	<!-- Navigation-->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container px-4 px-lg-5">
+			<div>
+				{% block header %} Electronic Commerce {% endblock %}
 			</div>
-			<div class="col-sm-7 col-md-7 col-lg-7">
-				<h2>
-					{% block header %} Electronic Commerce {% endblock %}
-				</h2>
-			</div>
-			<div class="col-sm-1 col-md-1 col-lg-1">
-				<a class="btn btn-success btn-sm ml-3" href="/cart/">
-					<span>Cart</span>
-					{% comment %} <span class="badge badge-light">
-						<label id="cart_qty"></label>
-					</span> {% endcomment %}
+
+			<div class="collapse navbar-collapse d-flex justify-content-around" id="navbarSupportedContent">
+				{% block sidebar %}
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+					<li class="nav-item"><a class="nav-link active" aria-current="page" href="/admin/">Admin</a></li>
+					<li class="nav-item"><a class="nav-link" href="/">Product</a></li>
+					<li class="nav-item"><a class="nav-link" href="/cart/">Cart</a></li>
+				</ul>
+				<a class="btn btn-outline-dark" href="/cart/">
+					<i class="bi-cart-fill me-1"></i>
+					Cart
+					<!-- <span class="badge bg-dark text-white ms-1 rounded-pill"></span> -->
 				</a>
+				{% endblock %}
+			</div>
+
+		</div>
+	</nav>
+	<!-- Header-->
+	<header class="bg-dark py-5">
+		<div class="container px-4 px-lg-5 my-5">
+			<div class="text-center text-white">
+				<h1 class="display-4 fw-bolder">Shop in style</h1>
+				<p class="lead fw-normal text-white-50 mb-0">For your journey</p>
 			</div>
 		</div>
+	</header>
+
+	<div class="row" style="min-height:40vh !important;">
+		<div id="content" class="min-h-100 bg-light col-sm-12 col-md-12 col-lg-12">
+			{% block content %}{% endblock %}
+		</div>
 	</div>
-	</div>
-	<div class="row">
-	<div id="sidebar" class="min-h-100 min-h-800 bg-light border col-sm-3col-md-3 col-lg-3">
-		{% block sidebar %}
-		<ul>
-			<li><a href="/admin/"><i class="fa fa-user" aria-hidden="true"></i> Admin</a></li>
-			<li><a href="/"><i class="fa fa-search" aria-hidden="true"></i>Product</a></li>
-			<li><a href="/cart/"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a></li>
-		</ul>
-		{% endblock %}
-	</div>
-	<div id="content" class="min-h-100 bg-light col-sm-9 col-md-9 col-lg-9">
-	{% block content %}{% endblock %}
-	</div>
-</div>
+	<!-- Footer-->
+	<footer class="py-5 bg-dark">
+		<div class="container">
+			<p class="m-0 text-center text-white">Copyright &copy; E-commerce Website 2022 - Journey</p>
+		</div>
+	</footer>
 </body>
+
 </html>
