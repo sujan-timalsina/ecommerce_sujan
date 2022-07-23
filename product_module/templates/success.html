@@ -1,14 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Success{% endblock %}
 {% block header %}
-    <h2>Payment Successful</h2>
+<h2>Payment Successful</h2>
 {% endblock %}
 {% block content %}
-    <h3 class="text-success">{{ message }}</h3>
-    <p>Thank you. Please visit our store again!</p>
-    <p>
-
+<h3 class="alert alert-success text-center p-3">{{ message }}</h3>
+<p class="text-center">Thank you for puchasing from our store!</p>
+<p class="d-flex justify-content-center">
     <a class="btn btn-primary" href="/"><i class="fa fa-search" aria-hidden="true"></i> Continue Shopping...</a>
-
-    </p>
+</p>
 {% endblock %}

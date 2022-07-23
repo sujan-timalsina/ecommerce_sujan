@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %} Cart {% endblock %}
-{% block header %} Your Cart {% endblock %}
+{% block header %} Journey {% endblock %}
 {% block content %}
 <div class="m-5">
     {% if cart_items %}
@@ -52,7 +52,7 @@
                     <form method="post" action="/payment/checkout/">
                         {% csrf_token %}
                         <div class="input-group">
-                            <input type="text" class="form-control" name="token" placeholder="Token" />
+                            <input type="text" class="form-control mr-3" name="token" placeholder="Token" />
                             <input type="hidden" name="amount" value="{{ total }}" />
                             <button type="submit" class="btn btn-primary" type="submit"><i class="fa fa-shopping-cart"
                                     aria-hidden="true"></i>Checkout Payment</button>
