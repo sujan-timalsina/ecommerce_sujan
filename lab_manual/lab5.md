@@ -1,4 +1,4 @@
-# **Lab 3 - Search Product for the user**
+# **Lab 5 - Search Product for the user**
 
 ## **Objective:**
 > 1. To perform search and filter operations in the user panel.

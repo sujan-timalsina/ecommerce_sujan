@@ -1,4 +1,4 @@
-# **Lab 3 - Create Frontend for Website**
+# **Lab 4 - Create Frontend for Website**
 
 ## **Objective:**
 > 1. To perform search and filter operations in the admin panel. 

@@ -1,4 +1,4 @@
-# **Lab 3 - Preparing Cart**
+# **Lab 6 - Preparing Cart**
 
 ## **Objective:**
 > 1. To learn about the preparation of Cart for the eCommerce website.
